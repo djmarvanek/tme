@@ -35,6 +35,7 @@ jobs:
       - run:
           name: "Say hello again"
           command: "echo Hello again, World!"
+      - sfdx/install
       - run:
           name: "sf auth list"
           command: "sfdx auth:list"
