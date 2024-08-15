@@ -42,6 +42,7 @@ jobs:
           command: "echo Hello again, World!"
       #- sfdx/install
       - run:
+      - run: sudo npm install -g npm@latest
           name: "install sfdx using node"
           command: "npm install --global sfdx-cli"
 
