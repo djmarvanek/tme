@@ -25,6 +25,14 @@ jobs:
           name: "Say hello"
           command: "echo Hello, World!"
 
+  jobs:
+    install_authenticate:
+      executor: sfdx/default
+      steps:
+        - run:
+            name: "install sfdx"
+            command: "echo install sfdx"
+
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/workflows/ & https://circleci.com/docs/configuration-reference/#workflows
 workflows:
