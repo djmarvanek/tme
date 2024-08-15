@@ -35,7 +35,7 @@ jobs:
       - run:
           name: "Say hello again"
           command: "echo Hello again, World!"
-      #- sfdx/install
+      - sfdx/install
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/workflows/ & https://circleci.com/docs/configuration-reference/#workflows
