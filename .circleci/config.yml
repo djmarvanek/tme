@@ -35,6 +35,9 @@ jobs:
       - run:
           name: "Say hello again"
           command: "echo Hello again, World!"
+      - run:
+          name: "sf auth list"
+          command: "sf auth list"
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/workflows/ & https://circleci.com/docs/configuration-reference/#workflows
