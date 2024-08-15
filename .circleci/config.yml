@@ -3,7 +3,8 @@
 version: 2.1
 
 orbs:
-  sfdx: circleci/salesforce-sfdx@2.2.0
+  #sfdx: circleci/salesforce-sfdx@2.2.0
+  node: circleci/node@18.12.0
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/jobs-steps/#jobs-overview & https://circleci.com/docs/configuration-reference/#jobs
@@ -31,7 +32,7 @@ jobs:
       # Specify the version you desire here
       # See: https://circleci.com/developer/images/image/cimg/base
       - image: cimg/base:current
-    executor: sfdx/default
+    #executor: sfdx/default
 
     # Add steps to the job
     # See: https://circleci.com/docs/jobs-steps/#steps-overview & https://circleci.com/docs/configuration-reference/#steps
@@ -39,7 +40,10 @@ jobs:
       - run:
           name: "Say hello again"
           command: "echo Hello again, World!"
-      - sfdx/install
+      #- sfdx/install
+      - run:
+          name: "install sfdx using node"
+          command: "npm install --global sfdx-cli"
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/workflows/ & https://circleci.com/docs/configuration-reference/#workflows
