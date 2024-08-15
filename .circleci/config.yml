@@ -23,14 +23,26 @@ jobs:
       - checkout
       - run:
           name: "Say hello"
-          command: "echo Hello, World from github!"
+          command: "echo Hello, World!"
       - run:
           name: "PWD"
           command: "pwd"
-      - run:
-          name: "org list"
-          command: "sf org list"
 
+jobs:
+  install_authenticate:
+    executor: sfdx/default
+    steps:
+      - checkout
+      # - sfdx/install
+      # - sfdx/auth:
+      #    defaultusername: user@email.com
+      - run:
+          command: >
+            echo You now have access to the sfdx cli and may execute commands
+            against it.
+
+            sfdx auth:list
+          name: Run your SFDX commands here
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/workflows/ & https://circleci.com/docs/configuration-reference/#workflows
 workflows:
@@ -38,3 +50,4 @@ workflows:
     # Inside the workflow, you define the jobs you want to run.
     jobs:
       - say-hello
+      - install_authenticate
