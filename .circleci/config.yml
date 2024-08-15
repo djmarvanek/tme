@@ -4,7 +4,7 @@ version: 2.1
 
 orbs:
   #sfdx: circleci/salesforce-sfdx@2.2.0
-  node: circleci/node@18.12.0
+  node: circleci/node@5.2.0
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/jobs-steps/#jobs-overview & https://circleci.com/docs/configuration-reference/#jobs
