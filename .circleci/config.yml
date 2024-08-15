@@ -25,7 +25,7 @@ jobs:
           name: "Say hello"
           command: "echo Hello, World!"
   install_authenticate:
-    executor: sfdx/default
+    #executor: sfdx/default
     steps:
       - run:
           name: "install sfdx"
